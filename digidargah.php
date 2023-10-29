@@ -19,25 +19,25 @@ if (!defined('_PS_VERSION_')) exit;
 class DigiDargah extends PaymentModule {
 	
 	private $_html = '';
-    private $_postErrors = array();
+    	private $_postErrors = array();
 	public $address;
 	
 	public function __construct(){
 		$this->name = 'digidargah';
-        $this->tab = 'payments_gateways';
-        $this->version = '1.1';
-        $this->author = 'DigiDargah';
-        $this->controllers = array('payment', 'validation');
-        $this->currencies = true;
-        $this->currencies_mode = 'checkbox';
-        $this->bootstrap = true;
-        $this->displayName = 'DigiDargah';
-        $this->description = 'درگاه پرداخت دیجی درگاه';
-        $this->confirmUninstall = 'مطمئن هستید ؟';
-        $this->ps_versions_compliancy = array('min' => '1.7.0', 'max' => _PS_VERSION_);
-        $this->bootstrap = true;
-        parent::__construct();
-    }
+	        $this->tab = 'payments_gateways';
+	        $this->version = '1.1';
+	        $this->author = 'DigiDargah';
+	        $this->controllers = array('payment', 'validation');
+	        $this->currencies = true;
+	        $this->currencies_mode = 'checkbox';
+	        $this->bootstrap = true;
+	        $this->displayName = 'DigiDargah';
+	        $this->description = 'درگاه پرداخت دیجی درگاه';
+	        $this->confirmUninstall = 'مطمئن هستید ؟';
+	        $this->ps_versions_compliancy = array('min' => '1.7.0', 'max' => _PS_VERSION_);
+	        $this->bootstrap = true;
+	        parent::__construct();
+	}
 	
 	public function install(){
 		return parent::install() && $this->registerHook('paymentOptions') && $this->registerHook('paymentReturn');
