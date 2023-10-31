@@ -60,13 +60,13 @@ Once the DigiDargah plugin is installed and configured, customers will see "پر
 
 ## Contributing
 
-If you want to contribute to this project or report issues, please visit the GitHub repository: [DigiDargah Crypto Payment Gateway for WHMCS](https://github.com/hanifzekri/DigiDargah_prestashop_payment_module).
+If you want to contribute to this project or report issues, please visit the GitHub repository: [DigiDargah Crypto Payment Gateway for PrestaShop](https://github.com/hanifzekri/DigiDargah_prestashop_payment_module).
 
 ---
 
 ## Troubleshooting
 
-If you encounter any issues or have questions about the DigiDargah Crypto Payment Gateway for WooCommerce, please refer to the [official documentation](https://digidargah.com) or contact our support team at [info@digidargah.com](mailto:info@digidargah.com).
+If you encounter any issues or have questions about the DigiDargah Crypto Payment Gateway for PrestaShop, please refer to the [official documentation](https://digidargah.com) or contact our support team at [info@digidargah.com](mailto:info@digidargah.com).
 
 ---
 
