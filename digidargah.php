@@ -32,7 +32,7 @@ class DigiDargah extends PaymentModule {
 	        $this->currencies_mode = 'checkbox';
 	        $this->bootstrap = true;
 	        $this->displayName = 'DigiDargah';
-	        $this->description = 'درگاه پرداخت دیجی درگاه';
+	        $this->description = 'درگاه پرداخت رمز ارزی دیجی درگاه';
 	        $this->confirmUninstall = 'مطمئن هستید ؟';
 	        $this->ps_versions_compliancy = array('min' => '1.7.0', 'max' => _PS_VERSION_);
 	        $this->bootstrap = true;
