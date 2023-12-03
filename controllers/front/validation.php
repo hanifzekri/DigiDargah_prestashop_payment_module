@@ -85,19 +85,25 @@ class DigiDargahValidationModuleFrontController extends ModuleFrontController {
             Tools::redirect('index.php?controller=order');
         }
 		
-		$params = array('api_key' => $api_key,
-						'amount_value' => $amount,
-						'amount_currency' => $currency,
-						'pay_currency' => $pay_currency,
-						'order_id' => $cart_id,
-						'respond_type' => 'link',
-						'callback' => $callback);
+		$params = array(
+			'api_key' => $api_key,
+			'amount_value' => $amount,
+			'amount_currency' => $currency,
+			'pay_currency' => $pay_currency,
+			'order_id' => $cart_id,
+			'respond_type' => 'link',
+			'callback' => $callback
+		);
 		
 		$url = 'https://digidargah.com/action/ws/request_create';
-		$options = array( 'http' => array('method' => 'POST', 'header' => 'Content-Type: application/x-www-form-urlencoded', 'timeout' => 10, 'content' => http_build_query($params)), 'ssl' => array('verify_peer' => false, 'verify_peer_name' => false));
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$response = curl_exec($ch);
+		curl_close($ch);
 				
-		$result = file_get_contents($url, false, stream_context_create($options));
-		$result = json_decode($result);
+		$result = json_decode($response);
 
         if ($result->status != 'success') {
             $this->errors[] = 'درگاه پرداخت با خطا مواجه شد. <br> پاسخ درگاه : ' . $result->respond;
@@ -133,15 +139,21 @@ class DigiDargahValidationModuleFrontController extends ModuleFrontController {
 				
 				$api_key = Configuration::get('digidargah_api_key');
 				
-				$params = array('api_key' => $api_key,
-								'order_id' => $cart_id,
-								'request_id' => $request_id);
-
+				$params = array(
+					'api_key' => $api_key,
+					'order_id' => $cart_id,
+					'request_id' => $request_id
+				);				
+				
 				$url = 'https://digidargah.com/action/ws/request_status';
-				$options = array( 'http' => array('method' => 'POST', 'header' => 'Content-Type: application/x-www-form-urlencoded', 'timeout' => 10, 'content' => http_build_query($params)), 'ssl' => array('verify_peer' => false, 'verify_peer_name' => false));
+				$ch = curl_init($url);
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				$response = curl_exec($ch);
+				curl_close($ch);
 
-				$result = file_get_contents($url, false, stream_context_create($options));
-				$result = json_decode($result);
+				$result = json_decode($response);
 
 				if ($result->status != 'success') {
 					$message = 'درگاه پرداخت با خطا مواجه شد. <br> پاسخ درگاه : ' . $result->respond;
@@ -213,11 +225,11 @@ class DigiDargahValidationModuleFrontController extends ModuleFrontController {
         );
     }
 
-    function digidargah_get_success_message($cart_id, $request_id) {
+    public function digidargah_get_success_message($cart_id, $request_id) {
         return str_replace(["{request_id}", "{cart_id}"], [$request_id, $cart_id], Configuration::get('digidargah_success_massage'));
     }
 
-    function digidargah_get_failed_message($cart_id, $request_id) {
+    public function digidargah_get_failed_message($cart_id, $request_id) {
 		return str_replace(["{request_id}", "{cart_id}"], [$request_id, $cart_id], Configuration::get('digidargah_failed_massage'));
 
     }
