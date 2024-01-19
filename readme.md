@@ -45,7 +45,7 @@ The DigiDargah Crypto Payment Gateway for Prestashop is a plugin that integrates
 2. Search for "DigiDargah" and click on it to configure the settings.
 3. Configure the following options:
    - API Key: Enter your DigiDargah API key.
-   - Payable Currencies: Specify the currencies you want to accept for payments. You can enter multiple currencies separated by dashes (e.g., BTC-ETH-LTC).
+   - pay Currencies: Specify the currencies you want to accept for payments. You can enter multiple currencies separated by dashes (e.g., bitcoin-dogecoin-ethereum).
    - Successful Payment Message: Customize the message displayed to customers after a successful payment. You can use placeholders like `{cart_id}` and `{request_id}` to display order-specific information.
    - Failed Payment Message: Customize the message displayed to customers if a payment fails. You can use placeholders like `{cart_id}` and `{request_id}` to display order-specific information.
 4. Click the "Save" button to save your settings.
