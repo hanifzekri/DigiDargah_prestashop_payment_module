@@ -145,7 +145,7 @@ class DigiDargahValidationModuleFrontController extends ModuleFrontController {
 					'request_id' => $request_id
 				);				
 				
-				$url = 'https://digidargah.com/action/ws/request_status';
+				$url = 'https://digidargah.com/action/ws/request/status';
 				$ch = curl_init($url);
 				curl_setopt($ch, CURLOPT_POST, true);
 				curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
