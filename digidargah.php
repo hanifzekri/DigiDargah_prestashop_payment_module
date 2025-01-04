@@ -77,7 +77,7 @@ class DigiDargah extends PaymentModule {
 		<label class="control-label col-lg-4 required"> کلید API : </label>
 		<div class="col-lg-8">
 		<input type="text" name="digidargah_api_key" value="' . Configuration::get('digidargah_api_key') . '">
-		<div class="help-block"> برای ایجاد کلید API لطفا به آدرس رو به رو مراجعه نمایید. <a href="https://digidargah.com/cryptosite" target="_blank">https://digidargah.com/cryptosite</a></div>
+		<div class="help-block"> برای ایجاد کلید API لطفا به آدرس رو به رو مراجعه نمایید. <a href="https://digidargah.com/gateway" target="_blank">https://digidargah.com/gateway</a></div>
 		</div>
 		</div>
 		
@@ -85,7 +85,7 @@ class DigiDargah extends PaymentModule {
         <label class="control-label col-lg-4 required"> ارزهای قابل انتخاب : </label>
 		<div class="col-lg-8">
 		<input type="text" name="digidargah_pay_currency" value="' . Configuration::get('digidargah_pay_currency') . '">
-		<div class="help-block"> به صورت پیش فرض کاربر امکان پرداخت از طریق تمامی <a href="https://digidargah.com/cryptosite" target="_blank"> ارزهای فعال </a> در درگاه را دارد اما در صورتی که تمایل دارید مشتری را محدود به پرداخت از طریق یک یا چند ارز خاص کنید، می توانید از طریق این متغییر نام ارز و یا ارزها را اعلام نمایید. در صورت تمایل به اعلام بیش از یک ارز، آنها را توسط خط تیره ( dash ) از هم جدا کنید. </div>
+		<div class="help-block"> به صورت پیش فرض کاربر امکان پرداخت از طریق تمامی <a href="https://digidargah.com/gateway" target="_blank"> ارزهای فعال </a> در درگاه را دارد اما در صورتی که تمایل دارید مشتری را محدود به پرداخت از طریق یک یا چند ارز خاص کنید، می توانید از طریق این متغییر نام ارز و یا ارزها را اعلام نمایید. در صورت تمایل به اعلام بیش از یک ارز، آنها را توسط خط تیره ( dash ) از هم جدا کنید. </div>
 		</div>
 		</div>
 		
